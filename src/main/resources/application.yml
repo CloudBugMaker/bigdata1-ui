@@ -1,0 +1,19 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /ui
+spring:
+  application:
+      name: bigdata-ui
+  thymeleaf:
+      prefix: classpath:/templates/ #默认
+      cache: false #关闭缓存
+      mode: HTML5
+      encoding: UTF-8
+      check-template-location: true
+
+#jsp
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp

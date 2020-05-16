@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Echarts使用</title>
+    <script src="../static/js/echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        var option = {
+            title: {text:'未来一周气温变化', subtext: '第一版'},
+            tooltip: {}, //提示框 trigger:'axis'
+            legend: {},
+            toolbox: {
+                show: true,
+                feature: {
+                    magicType: { //切换图表
+                        show: true, type: ['line', 'bar', 'stack', 'tiled']
+                    },
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            xAxis: [{
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            }],
+            yAxis: [{
+                type:'value', //默认类型
+                axisLabel:{formatter:'{value} ℃'} //单位
+            }],
+            //图表数据
+            series: [{
+                name: '最高气温', type: 'line',
+                data: [11, 11, 15, 13, 12, 13, 10],
+                markPoint: { //数据标注
+                    data: [{type: 'max', name: '最大值'}, {type: 'min', name: '最小值'}]
+                },
+                markLine: { //数据标线
+                    data: [{type: 'average', name: '平均值'}]
+                }
+            }, {
+                name: '最低气温', type: 'line',
+                data: [1, -2, 2, 5, 3, 2, 0]
+               }
+            ]
+        };
+
+        // 使用配置生成图表
+        myChart.setOption(option);　
+    </script>
+</body>
+</html>
