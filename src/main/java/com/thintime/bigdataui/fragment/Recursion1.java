@@ -3,7 +3,7 @@ package com.thintime.bigdataui.fragment;
 /**
  * @author Thintime
  * @create 2020/5/1
- * @desc todo 碎片化知识5：递归，方法自己调用自己
+ * @desc todo 递归，方法自己调用自己
  * @remark 容易出现栈溢出：方法调用时使用栈保存运行时的状态(变量拷贝、调用地址等)，栈的存储结构是有限的，超出后会{@link StackOverflowError}
  *
  * @hint 斐波那契数列：1，1，2，3，5，8，13，21...

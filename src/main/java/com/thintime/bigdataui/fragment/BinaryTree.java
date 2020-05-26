@@ -1,14 +1,9 @@
 package com.thintime.bigdataui.fragment;
 
-import javax.swing.tree.TreeNode;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-
 /**
  * @author Thintime
  * @create 2020/4/28
- * @desc todo 碎片化知识3：二叉树，每个结点最多有2个子树的树结构
+ * @desc todo 二叉树，每个结点最多有2个子树的树结构
  * @note 每个结点的深度 = 左右子树最大深度 + 1，即max(root)=max( max(root.left),max(root.right) )+1
  */
 public class BinaryTree {
